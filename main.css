@@ -1,0 +1,15 @@
+body {
+  background: url(assets/freedom.jpg) center center fixed;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+   }
+.quote {
+  font-family: 'Julius Sans One';
+  font-size: 2,5rem;
+  text-align: center;
+  }
+.canvas {
+  margin-bottom: 50%;
+ }
+
