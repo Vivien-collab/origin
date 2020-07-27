@@ -1,28 +1,62 @@
 <DOCTYPE! html>
-  <html>
+  <html lang="en">
   <head>
     <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
-    <meta charset="utf-8">
+
+    <meta charset=utf-8>
     <title>Freedom</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
      <link rel="stylesheet" type="text/css" href="main.css">
+    
     </head>
     <body>
+      <a href="#eng" data-reload> English</a>
+      <a href="#de" data-reload> Deutsch</a>
+      <a href="#it" data-reload> Italian</a>
+      <a href="#hu" data-reload> Hungarian</a>
       <div class="canvas">
-      <p class="quote">"THE FREEDOM OF MANKIND DOES NOT LIE IN THE FACT THAT WE CAN DO WHAT WE WANT, BUT THAT WE DO NOT HAVE TO DO THAT WHICH WE DO NOT WANT"</p>
+      <p id=text>"THE FREEDOM OF MANKIND DOES NOT LIE IN THE FACT THAT WE CAN DO WHAT WE WANT, BUT THAT WE DO NOT HAVE TO DO THAT WHICH WE DO NOT WANT"</p>
       <p class="writer">- Jean-Jacques Rousseau</p>
-      </div>
-      <div class="language-picker">
-        <label for="language-picker-select">Select your language</label>
-         <select name="language-picker-select" id="language-picker-select">
-  
-      <option lang="de" value="deutsch">Deutsch</option>
-      <option lang="en" value="english" selected>English</option>
-      <option lang="fr" value="francais">Français</option>
-      <option lang="it" value="italiano">Italiano</option>
-      <option lang="hu" value="hungarian">Hungarian</option>
-</select>
-</div>
+     <script>
+       //language reload anchors//
+       var dataReload = document.querySelectorAll("[data-reload]");
+       
+       
+       //language translation//
+        var language = {
+          eng: {
+            quote: "THE FREEDOM OF MANKIND DOES NOT LIE IN THE FACT THAT WE CAN DO WHAT WE WANT, BUT THAT WE DO NOT HAVE TO DO THAT WHICH WE DO NOT WANT"
+          },
+          de: {
+            quote: "Die Freiheit der Menschheit liegt nicht in der Tatsache, dass wir tun können, was wir wollen, sondern dass wir nicht tun müssen, was wir nicht wollen"
+             },
+          it: {
+            quote: "LA LIBERTÀ DELL'UOMO NON SI TROVA NEL FATTO CHE POSSIAMO FARE QUELLO CHE VOGLIAMO, MA CHE NON DEVIAMO FARE QUELLO CHE NON VOGLIAMO"
+            },
+          hu: {
+            quote: "AZ EMBERISÉG SZABADSÁGA NEM ABBAN REJLIK, HOGY MEG TUDJUK TENNI AMIT AKARUNK, HANEM ABBAN, HOGY NEM KELL MEGTENNÜNK AZT, AMIT NEM AKARUNK."
+            },
+       
+          if (window.location.hash) {
+            if (window.location.hash === "#de") {
+              text.textContent = language.de.quote;
+            if (window.location.hash) {
+              if (window.location.hash === "#it") {
+                text.textContent = language.it.quote;
+              if (window.location.hash) {
+                if (window.location.hash === "#hu") {
+                  text.textContent = language.hu.quote;
+                  }
+                }
+              for (i = 0; i <= dataReload.length; i++) {
+                dataReload [i].onclick = function () {
+                  location.reload(true);
+                };
+               }   
+
+            
+        </script>
+       </div>
       </body>
       </html>
       
